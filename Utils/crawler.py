@@ -12,7 +12,7 @@ def getSoup(url):
     headers = {'User-Agent':'Mozilla/5.0(Windows NT 10.0;Win64;x64)AppleWebKit / 537.36 Chrome / 70.0.3538.102 Safari / 537.36'} 
     resp = requests.get(url, headers = headers)
     soup = BeautifulSoup(resp.text, 'html.parser')
-    return soup
+    return soup, resp.status_code
 
 def getContext(websiteCategory, url):
     name1, name2, name3 = websiteNameDic[websiteCategory]
