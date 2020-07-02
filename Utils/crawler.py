@@ -10,7 +10,7 @@ def getWebsiteCategory(stringData):
 
 def getSoup(url):
     headers = {'User-Agent':'Mozilla/5.0(Windows NT 10.0;Win64;x64)AppleWebKit / 537.36 Chrome / 70.0.3538.102 Safari / 537.36'} 
-    resp = requests.get(url, headers = headers)
+    resp = requests.get(url, headers = headers, timeout = 3)
     soup = BeautifulSoup(resp.text, 'html.parser')
     return soup, resp.status_code
 
